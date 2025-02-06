@@ -15,6 +15,10 @@ This function is ideal for geolocating a user based on their nearby cell sites. 
 
 This function returns all of the LTE cells that Apple has seen near the passed site, and their respective locations. This is useful more for data collection than for geolocation. It does have a few quirks—for instance, some cells (eg. especially brand new cell sites, temporary COWs), may not show up unless passed directly in. 
 
+### `setCorsProxyUrl(url)`
+
+Because Apple's server doesn't return an `Access-Control-Allow-Origin` header, Surro won't work in a browser directly without a [CORS Proxy](https://httptoolkit.com/blog/cors-proxies/). This function can be called multiple times.
+
 Thanks to: 
 - https://github.com/acheong08/apple-corelocation-experiments/
 - https://codeberg.org/joelkoen/wtfps/

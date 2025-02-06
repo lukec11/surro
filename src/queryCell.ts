@@ -1,6 +1,7 @@
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
 import { AppleWLocSchema, CellTower, CellTowerSchema } from './gen/apple_pb';
-import { apple_api_url, device } from './constants';
+import { device } from './util/constants';
+import { apple_api_url } from './util/appleApiUrl';
 
 /**
  * @internal
