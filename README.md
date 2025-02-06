@@ -2,8 +2,12 @@
 
 Surro uses Apple's private CoreLocation API framework to find the location of nearby LTE cell sites. This can be useful for geolocating users, or for collecting data on nearby cell sites. This library is still under development, which means some features may change over time. In addition, support for Chinese mobile networks is not available, for the reasons described [here](https://github.com/acheong08/apple-corelocation-experiments?tab=readme-ov-file#china).
 
+## Web
+
+Surro is available as a web JavaScript library, [via jsDelivr](https://cdn.jsdelivr.net/npm/surro/dist/web/surro.js). To use it in a browser, you must configure a CORS proxy (see below).
+
 ## Generate types
-If you update the `proto/apple.proto` file, you can generate the types by running `npx buf generate`.
+If you update the `proto/apple.proto` file, you can generate the types by running `npx buf generate`. Types are generated automatically upon build.
 
 ## Functions
 
