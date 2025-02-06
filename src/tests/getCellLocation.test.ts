@@ -1,7 +1,7 @@
 import getCellLocation from '../getCellLocation';
 import { assert } from 'chai';
 import 'mocha';
-import sinon from 'sinon';
+import * as sinon from 'sinon';
 import * as queryCell from '../queryCell';
 
 afterEach(() => {

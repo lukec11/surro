@@ -1,7 +1,7 @@
 import getSurroundingCells from '../getSurroundingCells';
 import { assert } from 'chai';
 import 'mocha';
-import sinon from 'sinon';
+import * as sinon from 'sinon';
 import * as queryCell from '../queryCell';
 
 describe('getSurroundingCells', () => {
@@ -53,8 +53,8 @@ describe('getSurroundingCells', () => {
         cellId: 67890,
         location: {
           $typeName: 'apple.Location',
-          latitude: 1234567890n, // Valid latitude
-          longitude: 9876543210n, // Valid longitude
+          latitude: BigInt(1234567890), // Valid latitude
+          longitude: BigInt(9876543210), // Valid longitude
         },
       },
     ]);
