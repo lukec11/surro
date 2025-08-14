@@ -17,35 +17,52 @@ message DeviceType {
 }
 
 message AppleWLoc {
-  // optional int64 unknown_value0 = 1;
+  // optional int64 unknown_value0 = 1; // 3G?
   repeated WifiDevice wifi_devices = 2;
   optional sint32 num_cell_results = 3;
   optional sint32 num_wifi_results = 4; // Set to -1 to disable
   optional string app_bundle_id = 5;
   // optional string unknown_value2 = 6;
   // optional int64 unknown_value7 = 7;
-  repeated CellTower cell_tower_response = 22; // LTE cell towers
-  optional CellTower cell_tower_request = 25;
+  
+  // LTE cell towers
+  repeated CellTowerLte cell_tower_response_lte = 22; // LTE cell towers (response)
+  optional CellTowerLte cell_tower_request_lte = 25; // LTE cell towers (request)
+
+  // 5G NR cell towers
+  optional CellTowerNr cell_tower_request_nr = 29; // NR cell towers (request)
+  repeated CellTowerNr cell_tower_response_nr = 24; // NR cell towers (response)
+
   // optional int32 unknown_value31 = 31;
   // optional int32 unknown_value32 = 32;
   optional DeviceType device_type = 33;
 }
 
-message CellTower {
-  uint32 mmc = 1; // Typo for MCC
+message CellTowerLte {
+  uint32 mcc = 1;
   uint32 mnc = 2;
   uint32 cell_id = 3; // Full GID 
   uint32 tac_id = 4; 
   optional Location location = 5;
+  optional uint32 uarfcn = 6; // Only appears on some sites
+  optional uint32 pci = 7; // Only appears on some sites
+}
+
+message CellTowerNr {
+  uint32 mcc = 1; 
+  uint32 mnc = 2;
+  uint64 cell_id = 3; // Full GID 
+  uint64 tac_id = 4; 
+  optional Location location = 5;
   optional uint32 uarfcn = 6;
-  optional uint32 pid = 7;
+  optional uint32 pci = 7; // Haven't seen this on NR
 }
 
 message Location {
   optional int64 latitude = 1;
   optional int64 longitude = 2;
   optional int64 horizontal_accuracy = 3;
-  optional int64 unknown_value4 = 4;
+  optional int64 is_exact_tower_location = 4; // enb or tac is decommissioned and wloc returns exact site
   optional int64 altitude = 5;
   optional int64 vertical_accuracy = 6;
   optional int64 speed = 7;

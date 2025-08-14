@@ -1,5 +1,7 @@
+import { MAX_INT_32, MAX_INT_64, RAT } from './util/constants';
 import queryCell from './queryCell';
 import coordFromBigInt from './util/coordFromBigInt';
+import { isCellTowerLte, isCellTowerNr } from './util/narrowTypes';
 
 type IchneaLocationInformation = {
   lat: number;
@@ -14,12 +16,13 @@ type ApiResponse<T> =
 export default async function getCellLocation(
   mcc: number,
   mnc: number,
-  cid: number,
-  lac: number,
+  cid: number | bigint,
+  lac: number | bigint,
+  rat: keyof typeof RAT,
 ): Promise<ApiResponse<IchneaLocationInformation>> {
   try {
     // Get result from API
-    const result = await queryCell(mcc, mnc, cid, lac);
+    const result = await queryCell(mcc, mnc, cid, lac, RAT[rat]);
 
     if (result.length === 0) {
       throw new Error('No data found');
@@ -41,8 +44,11 @@ export default async function getCellLocation(
     }
 
     // Ensure that cell is valid (filter junk data)
-    const MAX_INT = Math.pow(2, 32) - 1;
-    if (polyResponse.cellId >= MAX_INT) {
+
+    if (
+      (isCellTowerLte(polyResponse) && polyResponse.cellId >= MAX_INT_32) ||
+      (isCellTowerNr(polyResponse) && polyResponse.cellId >= MAX_INT_64)
+    ) {
       throw new Error('Invalid cell ID');
     }
 

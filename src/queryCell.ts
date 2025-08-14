@@ -1,6 +1,12 @@
 import { create, fromBinary, toBinary } from '@bufbuild/protobuf';
-import { AppleWLocSchema, CellTower, CellTowerSchema } from './gen/apple_pb';
-import { apple_api_url, device } from './constants';
+import {
+  AppleWLocSchema,
+  CellTowerLte,
+  CellTowerLteSchema,
+  CellTowerNr,
+  CellTowerNrSchema,
+} from './gen/apple_pb';
+import { apple_api_url, device, RAT } from './util/constants';
 
 /**
  * @internal
@@ -13,25 +19,52 @@ import { apple_api_url, device } from './constants';
 export default async function queryCell(
   mcc: number,
   mnc: number,
-  cid: number,
-  lac: number,
-): Promise<CellTower[]> {
-  const cellToPass = create(CellTowerSchema, {
-    mmc: mcc,
-    mnc: mnc,
-    cellId: cid,
-    tacId: lac,
-  });
+  cid: number | bigint,
+  lac: number | bigint,
+  rat: RAT,
+): Promise<CellTowerLte[] | CellTowerNr[]> {
+  // Get appropriate request body
+  const requestBody = (function () {
+    switch (rat) {
+      case RAT.LTE: {
+        if (typeof cid !== 'number' || typeof lac !== 'number') {
+          throw new Error('LTE requires numeric cid and lac');
+        }
+        const cellToPass = create(CellTowerLteSchema, {
+          mcc: mcc,
+          mnc: mnc,
+          cellId: cid,
+          tacId: lac,
+        });
 
-  // Generate protobuf request body
-  const requestBody = create(AppleWLocSchema, {
-    numCellResults: 10000000,
-    cellTowerRequest: cellToPass,
-    deviceType: {
-      operatingSystem: device.operatingSystem,
-      model: device.deviceModel,
-    },
-  });
+        return create(AppleWLocSchema, {
+          numCellResults: 10000000,
+          cellTowerRequestLte: cellToPass,
+          deviceType: {
+            operatingSystem: device.operatingSystem,
+            model: device.deviceModel,
+          },
+        });
+      }
+      case RAT.NR: {
+        const cellToPass = create(CellTowerNrSchema, {
+          mcc: mcc,
+          mnc: mnc,
+          cellId: BigInt(cid), // convert CID and LAC to uint64 for NR, if they're passed as 32bit (which is possible on most carriers)
+          tacId: BigInt(lac),
+        });
+
+        return create(AppleWLocSchema, {
+          numCellResults: 10000000,
+          cellTowerRequestNr: cellToPass,
+          deviceType: {
+            operatingSystem: device.operatingSystem,
+            model: device.deviceModel,
+          },
+        });
+      }
+    }
+  })();
 
   // Generate binary request payload
   const protoPayload: Uint8Array = toBinary(AppleWLocSchema, requestBody);
@@ -86,7 +119,10 @@ export default async function queryCell(
   // Decode response object using proto schema
   const decodedResponseObject = fromBinary(AppleWLocSchema, resultAsByteArray);
 
-  const ctr = decodedResponseObject?.cellTowerResponse;
+  const ctr: CellTowerLte[] | CellTowerNr[] =
+    rat === RAT.LTE
+      ? decodedResponseObject.cellTowerResponseLte
+      : decodedResponseObject.cellTowerResponseNr;
 
   // Return raw response
   return ctr;
