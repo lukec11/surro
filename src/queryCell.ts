@@ -6,7 +6,8 @@ import {
   CellTowerNr,
   CellTowerNrSchema,
 } from './gen/apple_pb';
-import { apple_api_url, device, RAT } from './util/constants';
+import { device, RAT } from './util/constants';
+import { apple_api_url } from './util/appleApiUrl';
 
 /**
  * @internal

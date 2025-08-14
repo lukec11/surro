@@ -7,8 +7,12 @@
   "scripts": {
     "tsc": "tsc",
     "buf": "buf generate",
-    "build": "npm run buf && npm run test && npm run tsc",
     "test": "mocha",
+    "build:common": "npm run buf && npm run test",
+    "build:node": "npm run tsc",
+    "build:browser": "webpack",
+    "build": "npm run build:common && npm run build:node && npm run build:browser",
+    "prepublishOnly": "npm run build",
     "coverage": "nyc --reporter=lcov --reporter=text-summary --reporter=json-summary mocha"
   },
   "author": "lukec11",
@@ -26,20 +30,21 @@
     "@bufbuild/buf": "^1.48.0",
     "@bufbuild/protoc-gen-es": "^2.2.3",
     "@eslint/js": "^9.18.0",
-    "@json2csv/node": "^7.0.6",
     "@types/chai": "^5.0.1",
     "@types/express": "^5.0.0",
     "@types/mocha": "^10.0.10",
     "@types/sinon": "^17.0.3",
     "chai": "^4.3.7",
     "eslint": "^9.18.0",
-    "express": "^4.21.2",
     "globals": "^15.14.0",
     "mocha": "^11.1.0",
     "nyc": "^17.1.0",
     "prettier": "^3.4.2",
     "sinon": "^19.0.2",
+    "ts-loader": "^9.5.2",
     "ts-node": "^10.4.0",
-    "typescript-eslint": "^8.19.1"
+    "typescript-eslint": "^8.19.1",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
   }
 }
