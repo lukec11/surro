@@ -1,13 +1,17 @@
-import { CellTower } from './gen/apple_pb';
+import { MAX_INT_32, MAX_INT_64, RAT } from './util/constants';
+import { CellTowerLte, CellTowerNr } from './gen/apple_pb';
 import queryCell from './queryCell';
 import coordFromBigInt from './util/coordFromBigInt';
+import { isCellTowerLte, isCellTowerNr } from './util/narrowTypes';
 
 type CustomAdds = {
-  eNB: number;
+  eNB?: number;
   latitude: number;
   longitude: number;
   accuracy: number;
+  isExactTowerLocation: boolean;
 };
+type CellTower = CellTowerLte | CellTowerNr;
 export type SurroundingTower = CellTower & CustomAdds;
 
 type ApiResponse<T> =
@@ -17,12 +21,13 @@ type ApiResponse<T> =
 export default async function getSurroundingCells(
   mcc: number,
   mnc: number,
-  cid: number,
-  lac: number,
+  cid: number | bigint,
+  lac: number | bigint,
+  rat: keyof typeof RAT,
 ): Promise<ApiResponse<SurroundingTower[]>> {
   try {
     // Get result from API
-    const result = await queryCell(mcc, mnc, cid, lac);
+    const result = await queryCell(mcc, mnc, cid, lac, RAT[rat]);
 
     // Setup response
     const responseBuilder: SurroundingTower[] = [];
@@ -46,24 +51,31 @@ export default async function getSurroundingCells(
         continue;
       }
 
-      // Ensure that cell is valid (filter junk data)
-      const MAX_INT = Math.pow(2, 32) - 1;
-      if (polyResponse.cellId >= MAX_INT) {
+      // Ensure that cell ID is valid (filter junk data)
+      if (
+        (isCellTowerLte(polyResponse) && polyResponse.cellId >= MAX_INT_32) ||
+        (isCellTowerNr(polyResponse) && polyResponse.cellId >= MAX_INT_64)
+      ) {
         continue;
       }
 
       // Set extra parameters on response
-      const enbId = Math.trunc(polyResponse.cellId / 256);
       const latitude = coordFromBigInt(polyResponse.location.latitude);
       const longitude = coordFromBigInt(polyResponse.location.longitude);
       const accuracy = Number(polyResponse.location.horizontalAccuracy);
+      const isExactTowerLocation: boolean =
+        polyResponse?.location?.isExactTowerLocation === 1n || false;
 
       const customParams: CustomAdds = {
-        eNB: enbId,
-        latitude: latitude,
-        longitude: longitude,
-        accuracy: accuracy,
+        latitude,
+        longitude,
+        accuracy,
+        isExactTowerLocation,
       };
+
+      if (rat === RAT.LTE && isCellTowerLte(polyResponse)) {
+        customParams.eNB = Math.trunc(Number(polyResponse.cellId) / 256);
+      }
 
       // Combine the two types into response
       const response: SurroundingTower = { ...polyResponse, ...customParams };

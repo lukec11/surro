@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file apple.proto.
  */
 export const file_apple: GenFile = /*@__PURE__*/
-  fileDesc("CgthcHBsZS5wcm90bxIFYXBwbGUiUAoKV2lmaURldmljZRINCgVic3NpZBgBIAEoCRImCghsb2NhdGlvbhgCIAEoCzIPLmFwcGxlLkxvY2F0aW9uSACIAQFCCwoJX2xvY2F0aW9uIjUKCkRldmljZVR5cGUSGAoQb3BlcmF0aW5nX3N5c3RlbRgBIAEoCRINCgVtb2RlbBgCIAEoCSKAAwoJQXBwbGVXTG9jEicKDHdpZmlfZGV2aWNlcxgCIAMoCzIRLmFwcGxlLldpZmlEZXZpY2USHQoQbnVtX2NlbGxfcmVzdWx0cxgDIAEoEUgAiAEBEh0KEG51bV93aWZpX3Jlc3VsdHMYBCABKBFIAYgBARIaCg1hcHBfYnVuZGxlX2lkGAUgASgJSAKIAQESLQoTY2VsbF90b3dlcl9yZXNwb25zZRgWIAMoCzIQLmFwcGxlLkNlbGxUb3dlchIxChJjZWxsX3Rvd2VyX3JlcXVlc3QYGSABKAsyEC5hcHBsZS5DZWxsVG93ZXJIA4gBARIrCgtkZXZpY2VfdHlwZRghIAEoCzIRLmFwcGxlLkRldmljZVR5cGVIBIgBAUITChFfbnVtX2NlbGxfcmVzdWx0c0ITChFfbnVtX3dpZmlfcmVzdWx0c0IQCg5fYXBwX2J1bmRsZV9pZEIVChNfY2VsbF90b3dlcl9yZXF1ZXN0Qg4KDF9kZXZpY2VfdHlwZSK1AQoJQ2VsbFRvd2VyEgsKA21tYxgBIAEoDRILCgNtbmMYAiABKA0SDwoHY2VsbF9pZBgDIAEoDRIOCgZ0YWNfaWQYBCABKA0SJgoIbG9jYXRpb24YBSABKAsyDy5hcHBsZS5Mb2NhdGlvbkgAiAEBEhMKBnVhcmZjbhgGIAEoDUgBiAEBEhAKA3BpZBgHIAEoDUgCiAEBQgsKCV9sb2NhdGlvbkIJCgdfdWFyZmNuQgYKBF9waWQi3gwKCExvY2F0aW9uEhUKCGxhdGl0dWRlGAEgASgDSACIAQESFgoJbG9uZ2l0dWRlGAIgASgDSAGIAQESIAoTaG9yaXpvbnRhbF9hY2N1cmFjeRgDIAEoA0gCiAEBEhsKDnVua25vd25fdmFsdWU0GAQgASgDSAOIAQESFQoIYWx0aXR1ZGUYBSABKANIBIgBARIeChF2ZXJ0aWNhbF9hY2N1cmFjeRgGIAEoA0gFiAEBEhIKBXNwZWVkGAcgASgDSAaIAQESEwoGY291cnNlGAggASgDSAeIAQESFgoJdGltZXN0YW1wGAkgASgDSAiIAQESHAoPdW5rbm93bl9jb250ZXh0GAogASgDSAmIAQESIQoUbW90aW9uX2FjdGl2aXR5X3R5cGUYCyABKANICogBARInChptb3Rpb25fYWN0aXZpdHlfY29uZmlkZW5jZRgMIAEoA0gLiAEBEhUKCHByb3ZpZGVyGA0gASgDSAyIAQESEgoFZmxvb3IYDiABKANIDYgBARIWCgl1bmtub3duMTUYDyABKANIDogBARIzCiZtb3Rpb25fdmVoaWNsZV9jb25uZWN0ZWRfc3RhdGVfY2hhbmdlZBgQIAEoA0gPiAEBEiUKGG1vdGlvbl92ZWhpY2xlX2Nvbm5lY3RlZBgRIAEoA0gQiAEBEiAKE3Jhd19tb3Rpb25fYWN0aXZpdHkYEiABKANIEYgBARIcCg9tb3Rpb25fYWN0aXZpdHkYEyABKANIEogBARIlChhkb21pbmFudF9tb3Rpb25fYWN0aXZpdHkYFCABKANIE4gBARIcCg9jb3Vyc2VfYWNjdXJhY3kYFSABKANIFIgBARIbCg5zcGVlZF9hY2N1cmFjeRgWIAEoA0gViAEBEhsKDm1vZGVfaW5kaWNhdG9yGBcgASgDSBaIAQESGwoOaG9yelVuY1NlbWlNYWoYGCABKANIF4gBARIbCg5ob3J6VW5jU2VtaU1pbhgZIAEoA0gYiAEBEh0KEGhvcnpVbmNTZW1pTWFqQXoYGiABKANIGYgBARIdChBzYXRlbGxpdGVfcmVwb3J0GBsgASgDSBqIAQESKAobaXNfZnJvbV9sb2NhdGlvbl9jb250cm9sbGVyGBwgASgDSBuIAQESJwoacGlwZWxpbmVfZGlhZ25vc3RpY19yZXBvcnQYHSABKANIHIgBARIoChtiYXJvX2NhbGlicmF0aW9uX2luZGljYXRpb24YHiABKANIHYgBARIgChNwcm9jZXNzaW5nX21ldGFkYXRhGB8gASgDSB6IAQFCCwoJX2xhdGl0dWRlQgwKCl9sb25naXR1ZGVCFgoUX2hvcml6b250YWxfYWNjdXJhY3lCEQoPX3Vua25vd25fdmFsdWU0QgsKCV9hbHRpdHVkZUIUChJfdmVydGljYWxfYWNjdXJhY3lCCAoGX3NwZWVkQgkKB19jb3Vyc2VCDAoKX3RpbWVzdGFtcEISChBfdW5rbm93bl9jb250ZXh0QhcKFV9tb3Rpb25fYWN0aXZpdHlfdHlwZUIdChtfbW90aW9uX2FjdGl2aXR5X2NvbmZpZGVuY2VCCwoJX3Byb3ZpZGVyQggKBl9mbG9vckIMCgpfdW5rbm93bjE1QikKJ19tb3Rpb25fdmVoaWNsZV9jb25uZWN0ZWRfc3RhdGVfY2hhbmdlZEIbChlfbW90aW9uX3ZlaGljbGVfY29ubmVjdGVkQhYKFF9yYXdfbW90aW9uX2FjdGl2aXR5QhIKEF9tb3Rpb25fYWN0aXZpdHlCGwoZX2RvbWluYW50X21vdGlvbl9hY3Rpdml0eUISChBfY291cnNlX2FjY3VyYWN5QhEKD19zcGVlZF9hY2N1cmFjeUIRCg9fbW9kZV9pbmRpY2F0b3JCEQoPX2hvcnpVbmNTZW1pTWFqQhEKD19ob3J6VW5jU2VtaU1pbkITChFfaG9yelVuY1NlbWlNYWpBekITChFfc2F0ZWxsaXRlX3JlcG9ydEIeChxfaXNfZnJvbV9sb2NhdGlvbl9jb250cm9sbGVyQh0KG19waXBlbGluZV9kaWFnbm9zdGljX3JlcG9ydEIeChxfYmFyb19jYWxpYnJhdGlvbl9pbmRpY2F0aW9uQhYKFF9wcm9jZXNzaW5nX21ldGFkYXRhYgZwcm90bzM");
+  fileDesc("CgthcHBsZS5wcm90bxIFYXBwbGUiUAoKV2lmaURldmljZRINCgVic3NpZBgBIAEoCRImCghsb2NhdGlvbhgCIAEoCzIPLmFwcGxlLkxvY2F0aW9uSACIAQFCCwoJX2xvY2F0aW9uIjUKCkRldmljZVR5cGUSGAoQb3BlcmF0aW5nX3N5c3RlbRgBIAEoCRINCgVtb2RlbBgCIAEoCSKYBAoJQXBwbGVXTG9jEicKDHdpZmlfZGV2aWNlcxgCIAMoCzIRLmFwcGxlLldpZmlEZXZpY2USHQoQbnVtX2NlbGxfcmVzdWx0cxgDIAEoEUgAiAEBEh0KEG51bV93aWZpX3Jlc3VsdHMYBCABKBFIAYgBARIaCg1hcHBfYnVuZGxlX2lkGAUgASgJSAKIAQESNAoXY2VsbF90b3dlcl9yZXNwb25zZV9sdGUYFiADKAsyEy5hcHBsZS5DZWxsVG93ZXJMdGUSOAoWY2VsbF90b3dlcl9yZXF1ZXN0X2x0ZRgZIAEoCzITLmFwcGxlLkNlbGxUb3dlckx0ZUgDiAEBEjYKFWNlbGxfdG93ZXJfcmVxdWVzdF9uchgdIAEoCzISLmFwcGxlLkNlbGxUb3dlck5ySASIAQESMgoWY2VsbF90b3dlcl9yZXNwb25zZV9uchgYIAMoCzISLmFwcGxlLkNlbGxUb3dlck5yEisKC2RldmljZV90eXBlGCEgASgLMhEuYXBwbGUuRGV2aWNlVHlwZUgFiAEBQhMKEV9udW1fY2VsbF9yZXN1bHRzQhMKEV9udW1fd2lmaV9yZXN1bHRzQhAKDl9hcHBfYnVuZGxlX2lkQhkKF19jZWxsX3Rvd2VyX3JlcXVlc3RfbHRlQhgKFl9jZWxsX3Rvd2VyX3JlcXVlc3RfbnJCDgoMX2RldmljZV90eXBlIrgBCgxDZWxsVG93ZXJMdGUSCwoDbWNjGAEgASgNEgsKA21uYxgCIAEoDRIPCgdjZWxsX2lkGAMgASgNEg4KBnRhY19pZBgEIAEoDRImCghsb2NhdGlvbhgFIAEoCzIPLmFwcGxlLkxvY2F0aW9uSACIAQESEwoGdWFyZmNuGAYgASgNSAGIAQESEAoDcGNpGAcgASgNSAKIAQFCCwoJX2xvY2F0aW9uQgkKB191YXJmY25CBgoEX3BjaSK3AQoLQ2VsbFRvd2VyTnISCwoDbWNjGAEgASgNEgsKA21uYxgCIAEoDRIPCgdjZWxsX2lkGAMgASgEEg4KBnRhY19pZBgEIAEoBBImCghsb2NhdGlvbhgFIAEoCzIPLmFwcGxlLkxvY2F0aW9uSACIAQESEwoGdWFyZmNuGAYgASgNSAGIAQESEAoDcGNpGAcgASgNSAKIAQFCCwoJX2xvY2F0aW9uQgkKB191YXJmY25CBgoEX3BjaSLwDAoITG9jYXRpb24SFQoIbGF0aXR1ZGUYASABKANIAIgBARIWCglsb25naXR1ZGUYAiABKANIAYgBARIgChNob3Jpem9udGFsX2FjY3VyYWN5GAMgASgDSAKIAQESJAoXaXNfZXhhY3RfdG93ZXJfbG9jYXRpb24YBCABKANIA4gBARIVCghhbHRpdHVkZRgFIAEoA0gEiAEBEh4KEXZlcnRpY2FsX2FjY3VyYWN5GAYgASgDSAWIAQESEgoFc3BlZWQYByABKANIBogBARITCgZjb3Vyc2UYCCABKANIB4gBARIWCgl0aW1lc3RhbXAYCSABKANICIgBARIcCg91bmtub3duX2NvbnRleHQYCiABKANICYgBARIhChRtb3Rpb25fYWN0aXZpdHlfdHlwZRgLIAEoA0gKiAEBEicKGm1vdGlvbl9hY3Rpdml0eV9jb25maWRlbmNlGAwgASgDSAuIAQESFQoIcHJvdmlkZXIYDSABKANIDIgBARISCgVmbG9vchgOIAEoA0gNiAEBEhYKCXVua25vd24xNRgPIAEoA0gOiAEBEjMKJm1vdGlvbl92ZWhpY2xlX2Nvbm5lY3RlZF9zdGF0ZV9jaGFuZ2VkGBAgASgDSA+IAQESJQoYbW90aW9uX3ZlaGljbGVfY29ubmVjdGVkGBEgASgDSBCIAQESIAoTcmF3X21vdGlvbl9hY3Rpdml0eRgSIAEoA0gRiAEBEhwKD21vdGlvbl9hY3Rpdml0eRgTIAEoA0gSiAEBEiUKGGRvbWluYW50X21vdGlvbl9hY3Rpdml0eRgUIAEoA0gTiAEBEhwKD2NvdXJzZV9hY2N1cmFjeRgVIAEoA0gUiAEBEhsKDnNwZWVkX2FjY3VyYWN5GBYgASgDSBWIAQESGwoObW9kZV9pbmRpY2F0b3IYFyABKANIFogBARIbCg5ob3J6VW5jU2VtaU1hahgYIAEoA0gXiAEBEhsKDmhvcnpVbmNTZW1pTWluGBkgASgDSBiIAQESHQoQaG9yelVuY1NlbWlNYWpBehgaIAEoA0gZiAEBEh0KEHNhdGVsbGl0ZV9yZXBvcnQYGyABKANIGogBARIoChtpc19mcm9tX2xvY2F0aW9uX2NvbnRyb2xsZXIYHCABKANIG4gBARInChpwaXBlbGluZV9kaWFnbm9zdGljX3JlcG9ydBgdIAEoA0gciAEBEigKG2Jhcm9fY2FsaWJyYXRpb25faW5kaWNhdGlvbhgeIAEoA0gdiAEBEiAKE3Byb2Nlc3NpbmdfbWV0YWRhdGEYHyABKANIHogBAUILCglfbGF0aXR1ZGVCDAoKX2xvbmdpdHVkZUIWChRfaG9yaXpvbnRhbF9hY2N1cmFjeUIaChhfaXNfZXhhY3RfdG93ZXJfbG9jYXRpb25CCwoJX2FsdGl0dWRlQhQKEl92ZXJ0aWNhbF9hY2N1cmFjeUIICgZfc3BlZWRCCQoHX2NvdXJzZUIMCgpfdGltZXN0YW1wQhIKEF91bmtub3duX2NvbnRleHRCFwoVX21vdGlvbl9hY3Rpdml0eV90eXBlQh0KG19tb3Rpb25fYWN0aXZpdHlfY29uZmlkZW5jZUILCglfcHJvdmlkZXJCCAoGX2Zsb29yQgwKCl91bmtub3duMTVCKQonX21vdGlvbl92ZWhpY2xlX2Nvbm5lY3RlZF9zdGF0ZV9jaGFuZ2VkQhsKGV9tb3Rpb25fdmVoaWNsZV9jb25uZWN0ZWRCFgoUX3Jhd19tb3Rpb25fYWN0aXZpdHlCEgoQX21vdGlvbl9hY3Rpdml0eUIbChlfZG9taW5hbnRfbW90aW9uX2FjdGl2aXR5QhIKEF9jb3Vyc2VfYWNjdXJhY3lCEQoPX3NwZWVkX2FjY3VyYWN5QhEKD19tb2RlX2luZGljYXRvckIRCg9faG9yelVuY1NlbWlNYWpCEQoPX2hvcnpVbmNTZW1pTWluQhMKEV9ob3J6VW5jU2VtaU1hakF6QhMKEV9zYXRlbGxpdGVfcmVwb3J0Qh4KHF9pc19mcm9tX2xvY2F0aW9uX2NvbnRyb2xsZXJCHQobX3BpcGVsaW5lX2RpYWdub3N0aWNfcmVwb3J0Qh4KHF9iYXJvX2NhbGlicmF0aW9uX2luZGljYXRpb25CFgoUX3Byb2Nlc3NpbmdfbWV0YWRhdGFiBnByb3RvMw");
 
 /**
  * @generated from message apple.WifiDevice
@@ -65,7 +65,7 @@ export const DeviceTypeSchema: GenMessage<DeviceType> = /*@__PURE__*/
  */
 export type AppleWLoc = Message<"apple.AppleWLoc"> & {
   /**
-   * optional int64 unknown_value0 = 1;
+   * optional int64 unknown_value0 = 1; // 3G?
    *
    * @generated from field: repeated apple.WifiDevice wifi_devices = 2;
    */
@@ -84,24 +84,44 @@ export type AppleWLoc = Message<"apple.AppleWLoc"> & {
   numWifiResults?: number;
 
   /**
+   * optional string unknown_value2 = 6;
+   * optional int64 unknown_value7 = 7;
+   *
    * @generated from field: optional string app_bundle_id = 5;
    */
   appBundleId?: string;
 
   /**
-   * optional string unknown_value2 = 6;
-   * optional int64 unknown_value7 = 7;
-   *
    * LTE cell towers
    *
-   * @generated from field: repeated apple.CellTower cell_tower_response = 22;
+   * LTE cell towers (response)
+   *
+   * @generated from field: repeated apple.CellTowerLte cell_tower_response_lte = 22;
    */
-  cellTowerResponse: CellTower[];
+  cellTowerResponseLte: CellTowerLte[];
 
   /**
-   * @generated from field: optional apple.CellTower cell_tower_request = 25;
+   * LTE cell towers (request)
+   *
+   * @generated from field: optional apple.CellTowerLte cell_tower_request_lte = 25;
    */
-  cellTowerRequest?: CellTower;
+  cellTowerRequestLte?: CellTowerLte;
+
+  /**
+   * 5G NR cell towers
+   *
+   * NR cell towers (request)
+   *
+   * @generated from field: optional apple.CellTowerNr cell_tower_request_nr = 29;
+   */
+  cellTowerRequestNr?: CellTowerNr;
+
+  /**
+   * NR cell towers (response)
+   *
+   * @generated from field: repeated apple.CellTowerNr cell_tower_response_nr = 24;
+   */
+  cellTowerResponseNr: CellTowerNr[];
 
   /**
    * optional int32 unknown_value31 = 31;
@@ -120,15 +140,13 @@ export const AppleWLocSchema: GenMessage<AppleWLoc> = /*@__PURE__*/
   messageDesc(file_apple, 2);
 
 /**
- * @generated from message apple.CellTower
+ * @generated from message apple.CellTowerLte
  */
-export type CellTower = Message<"apple.CellTower"> & {
+export type CellTowerLte = Message<"apple.CellTowerLte"> & {
   /**
-   * Typo for MCC
-   *
-   * @generated from field: uint32 mmc = 1;
+   * @generated from field: uint32 mcc = 1;
    */
-  mmc: number;
+  mcc: number;
 
   /**
    * @generated from field: uint32 mnc = 2;
@@ -153,22 +171,77 @@ export type CellTower = Message<"apple.CellTower"> & {
   location?: Location;
 
   /**
+   * Only appears on some sites
+   *
    * @generated from field: optional uint32 uarfcn = 6;
    */
   uarfcn?: number;
 
   /**
-   * @generated from field: optional uint32 pid = 7;
+   * Only appears on some sites
+   *
+   * @generated from field: optional uint32 pci = 7;
    */
-  pid?: number;
+  pci?: number;
 };
 
 /**
- * Describes the message apple.CellTower.
- * Use `create(CellTowerSchema)` to create a new message.
+ * Describes the message apple.CellTowerLte.
+ * Use `create(CellTowerLteSchema)` to create a new message.
  */
-export const CellTowerSchema: GenMessage<CellTower> = /*@__PURE__*/
+export const CellTowerLteSchema: GenMessage<CellTowerLte> = /*@__PURE__*/
   messageDesc(file_apple, 3);
+
+/**
+ * @generated from message apple.CellTowerNr
+ */
+export type CellTowerNr = Message<"apple.CellTowerNr"> & {
+  /**
+   * @generated from field: uint32 mcc = 1;
+   */
+  mcc: number;
+
+  /**
+   * @generated from field: uint32 mnc = 2;
+   */
+  mnc: number;
+
+  /**
+   * Full GID 
+   *
+   * @generated from field: uint64 cell_id = 3;
+   */
+  cellId: bigint;
+
+  /**
+   * @generated from field: uint64 tac_id = 4;
+   */
+  tacId: bigint;
+
+  /**
+   * @generated from field: optional apple.Location location = 5;
+   */
+  location?: Location;
+
+  /**
+   * @generated from field: optional uint32 uarfcn = 6;
+   */
+  uarfcn?: number;
+
+  /**
+   * Haven't seen this on NR
+   *
+   * @generated from field: optional uint32 pci = 7;
+   */
+  pci?: number;
+};
+
+/**
+ * Describes the message apple.CellTowerNr.
+ * Use `create(CellTowerNrSchema)` to create a new message.
+ */
+export const CellTowerNrSchema: GenMessage<CellTowerNr> = /*@__PURE__*/
+  messageDesc(file_apple, 4);
 
 /**
  * @generated from message apple.Location
@@ -190,9 +263,11 @@ export type Location = Message<"apple.Location"> & {
   horizontalAccuracy?: bigint;
 
   /**
-   * @generated from field: optional int64 unknown_value4 = 4;
+   * enb or tac is decommissioned and wloc returns exact site
+   *
+   * @generated from field: optional int64 is_exact_tower_location = 4;
    */
-  unknownValue4?: bigint;
+  isExactTowerLocation?: bigint;
 
   /**
    * @generated from field: optional int64 altitude = 5;
@@ -348,5 +423,5 @@ export type Location = Message<"apple.Location"> & {
  * Use `create(LocationSchema)` to create a new message.
  */
 export const LocationSchema: GenMessage<Location> = /*@__PURE__*/
-  messageDesc(file_apple, 4);
+  messageDesc(file_apple, 5);
 

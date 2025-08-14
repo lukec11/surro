@@ -1,6 +1,6 @@
 {
   "name": "surro",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A TypeScript implementation of Apple's CoreLocation API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "tsc": "tsc",
     "buf": "buf generate",
     "test": "mocha",
-    "build:common": "npm run test && npm run buf",
+    "build:common": "npm run buf && npm run test",
     "build:node": "npm run tsc",
     "build:browser": "webpack",
     "build": "npm run build:common && npm run build:node && npm run build:browser",
@@ -23,10 +23,10 @@
   },
   "dependencies": {
     "@bufbuild/protobuf": "^2.2.3",
-    "node-fetch": "^3.3.2",
-    "typescript": "^5.7.2"
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
+    "typescript": "^5.7.2",
     "@bufbuild/buf": "^1.48.0",
     "@bufbuild/protoc-gen-es": "^2.2.3",
     "@eslint/js": "^9.18.0",
@@ -34,7 +34,7 @@
     "@types/express": "^5.0.0",
     "@types/mocha": "^10.0.10",
     "@types/sinon": "^17.0.3",
-    "chai": "^5.1.2",
+    "chai": "^4.3.7",
     "eslint": "^9.18.0",
     "globals": "^15.14.0",
     "mocha": "^11.1.0",
